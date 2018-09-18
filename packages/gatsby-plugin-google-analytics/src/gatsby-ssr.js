@@ -50,6 +50,11 @@ exports.onRenderBody = (
         typeof pluginOptions.anonymize !== `undefined`
           ? `ga('set', 'anonymizeIp', 1);`
           : ``
+      }
+      ${
+        typeof pluginOptions.optimizeId !== `undefined`
+          ? `ga('require', '${pluginOptions.optimizeId}');`
+          : ``
       }}
       `,
         }}
